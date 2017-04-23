@@ -14,5 +14,20 @@ namespace CalcClass
             get { return _lastError; }
             set { _lastError = value; }
         }
+
+        public static int Add(long a, long b)
+        {
+            int result;
+            try
+            {
+                result = (int)(a + b);
+            }
+            catch (OverflowException)
+            {
+                _lastError = "Error 06";
+                result = 0;
+            }
+            return result;
+        }
     }
 }
