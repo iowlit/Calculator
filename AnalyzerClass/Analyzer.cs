@@ -21,16 +21,16 @@ namespace AnalyzerClass
                     Expression = "Error 05";
                     return false;
                 }
-                Expression.Replace(" ", string.Empty);
+                Expression = Expression.Replace(" ", string.Empty);
                 if (Expression.Length > 30)
                 {
                     ShowMessage = true;
                     Expression = "Error 08";
                     return false;
                 }
-                Expression.ToLower();
+                Expression = Expression.ToLower();
                 // % = mod
-                Expression.Replace("mod", "%");
+                Expression = Expression.Replace("mod", "%");
                 int OpenBracketsCount = 0;
 
                 for (int i = 0; i < Expression.Length; i++)

@@ -12,7 +12,7 @@
             <ColumnDefinition Width="234*"/>
         </Grid.ColumnDefinitions>
         <TextBox x:Name="textBoxExpression" HorizontalAlignment="Left" Height="23" Margin="21,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="201" TextAlignment="Right" Grid.Column="1"/>
-        <TextBox x:Name="textBoxResult" HorizontalAlignment="Left" Height="23" Margin="21,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" IsEnabled="False" Grid.Column="1"/>
+        <TextBox x:Name="textBoxResult" HorizontalAlignment="Left" Height="23" Margin="21,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Right" Width="201" IsEnabled="False" Grid.Column="1"/>
         <Label x:Name="label" Content="Expression" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label_Copy" Content="Result" HorizontalAlignment="Left" Margin="10,38,0,0" VerticalAlignment="Top"/>
         <GroupBox x:Name="groupBoxEditing" Header="Editing" HorizontalAlignment="Left" Margin="22,66,0,0" VerticalAlignment="Top" Height="55" Width="273" Foreground="Black" Grid.ColumnSpan="2">

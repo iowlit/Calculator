@@ -95,7 +95,8 @@ namespace Calculator
                         textBoxExpression.Text += "mod";
                         break;
                     case "C":
-                        textBoxExpression.Text = "0";
+                        textBoxExpression.Text = "";
+                        textBoxResult.Text = "";              
                         break;
                     case "Backspace":
                         if (textBoxExpression.Text.Length > 0)
@@ -163,7 +164,7 @@ namespace Calculator
                         break;
                     case "=":
                         Analyzer.Expression = textBoxExpression.Text;
-                        textBoxExpression.Text = Analyzer.Estimate();
+                        textBoxResult.Text = Analyzer.Estimate();
                         break;
 
                 }
