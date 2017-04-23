@@ -324,6 +324,7 @@ namespace AnalyzerClass
         {
             if (!CheckCurrency())
             {
+                ShowMessage = false;
                 return Expression;
             }
             Expression = Format();
