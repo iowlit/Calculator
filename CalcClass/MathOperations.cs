@@ -8,5 +8,11 @@ namespace CalcClass
 {
     class MathOperations
     {
+        private static string _lastError = "";
+        public static string lastError
+        {
+            get { return _lastError; }
+            set { _lastError = value; }
+        }
     }
 }
