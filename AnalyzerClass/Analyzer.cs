@@ -115,13 +115,13 @@ namespace AnalyzerClass
                             }
                         case '0':
                             {
-                                if (i == 0)
+                                if (i == 0 && "0123456789".Contains(Expression[i + 1]))
                                 {
                                     ShowMessage = true;
                                     Expression = "Error 03";
                                     return false;
                                 }
-                                else if (!"0123456789".Contains(Expression[i - 1]))
+                                else if(i != 0 && "0123456789".Contains(Expression[i - 1]))
                                 {
                                     ShowMessage = true;
                                     Expression = "Error 03";
