@@ -230,11 +230,11 @@ namespace AnalyzerClass
                     {
                         case "*":
                             {
-                                tmp.Push(MathFunction.Mult(tmp.Pop(), tmp.Pop()));
-                                if (MathFunction._lastError.Length > 0)
+                                tmp.Push(MathOperations.Mult(tmp.Pop(), tmp.Pop()));
+                                if (MathOperations.lastError.Length > 0)
                                 {
                                     ShowMessage = true;
-                                    Expression = MathFunction._lastError;
+                                    Expression = MathOperations.lastError;
                                     return Expression;
                                 }
                                 break;
@@ -242,11 +242,11 @@ namespace AnalyzerClass
                         case "/":
                             {
                                 n = tmp.Pop();
-                                tmp.Push(MathFunction.Div(tmp.Pop(), n));
-                                if (MathFunction._lastError.Length > 0)
+                                tmp.Push(MathOperations.Div(tmp.Pop(), n));
+                                if (MathOperations.lastError.Length > 0)
                                 {
                                     ShowMessage = true;
-                                    Expression = MathFunction._lastError;
+                                    Expression = MathOperations.lastError;
                                     return Expression;
                                 }
                                 break;
@@ -254,22 +254,22 @@ namespace AnalyzerClass
                         case "%":
                             {
                                 n = tmp.Pop();
-                                tmp.Push(MathFunction.Mod(tmp.Pop(), n));
-                                if (MathFunction._lastError.Length > 0)
+                                tmp.Push(MathOperations.Mod(tmp.Pop(), n));
+                                if (MathOperations.lastError.Length > 0)
                                 {
                                     ShowMessage = true;
-                                    Expression = MathFunction._lastError;
+                                    Expression = MathOperations.lastError;
                                     return Expression;
                                 }
                                 break;
                             }
                         case "+":
                             {
-                                tmp.Push(MathFunction.Add(tmp.Pop(), tmp.Pop()));
-                                if (MathFunction._lastError.Length > 0)
+                                tmp.Push(MathOperations.Add(tmp.Pop(), tmp.Pop()));
+                                if (MathOperations.lastError.Length > 0)
                                 {
                                     ShowMessage = true;
-                                    Expression = MathFunction._lastError;
+                                    Expression = MathOperations.lastError;
                                     return Expression;
                                 }
                                 break;
@@ -277,33 +277,33 @@ namespace AnalyzerClass
                         case "-":
                             {
                                 n = tmp.Pop();
-                                tmp.Push(MathFunction.Sub(tmp.Pop(), n));
-                                if (MathFunction._lastError.Length > 0)
+                                tmp.Push(MathOperations.Sub(tmp.Pop(), n));
+                                if (MathOperations.lastError.Length > 0)
                                 {
                                     ShowMessage = true;
-                                    Expression = MathFunction._lastError;
+                                    Expression = MathOperations.lastError;
                                     return Expression;
                                 }
                                 break;
                             }
                         case "m":
                             {
-                                tmp.Push(MathFunction.IABS(tmp.Pop()));
-                                if (MathFunction._lastError.Length > 0)
+                                tmp.Push(MathOperations.IABS(tmp.Pop()));
+                                if (MathOperations.lastError.Length > 0)
                                 {
                                     ShowMessage = true;
-                                    Expression = MathFunction._lastError;
+                                    Expression = MathOperations.lastError;
                                     return Expression;
                                 }
                                 break;
                             }
                         case "p":
                             {
-                                tmp.Push(MathFunction.ABS(tmp.Pop()));
-                                if (MathFunction._lastError.Length > 0)
+                                tmp.Push(MathOperations.ABS(tmp.Pop()));
+                                if (MathOperations.lastError.Length > 0)
                                 {
                                     ShowMessage = true;
-                                    Expression = MathFunction._lastError;
+                                    Expression = MathOperations.lastError;
                                     return Expression;
                                 }
                                 break;

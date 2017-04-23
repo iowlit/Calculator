@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using AnalyzerClass;
 
 namespace Calculator
 {
@@ -161,9 +162,8 @@ namespace Calculator
                         _checkExp = textBoxExpression.Text;
                         break;
                     case "=":
-                        //AnalyzerClass alalizerOb = new AnalyzerClass(textBoxExpression.Text);
-                        //textBoxResult.Text = AnalyzerClass.Estimate();
-                        textBoxExpression.Text = "0";
+                        Analyzer.Expression = textBoxExpression.Text;
+                        textBoxExpression.Text = Analyzer.Estimate();
                         break;
 
                 }

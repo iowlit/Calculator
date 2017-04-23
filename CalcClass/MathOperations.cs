@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CalcClass
 {
-    class MathOperations
+    public class MathOperations
     {
         private static string _lastError = "";
         public static string lastError
