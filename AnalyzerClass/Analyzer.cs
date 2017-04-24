@@ -115,17 +115,23 @@ namespace AnalyzerClass
                             }
                         case '0':
                             {
-                                if (i == 0 && "0123456789".Contains(Expression[i + 1]))
+                                if (i == 0)
                                 {
-                                    ShowMessage = true;
-                                    Expression = "Error 03";
-                                    return false;
+                                    if ("0123456789".Contains(Expression[i + 1]))
+                                    {
+                                        ShowMessage = true;
+                                        Expression = "Error 03";
+                                        return false;
+                                    }
                                 }
-                                else if(i != 0 && "0123456789".Contains(Expression[i - 1]))
+                                else if (!"0123456789".Contains(Expression[i-1]))
                                 {
-                                    ShowMessage = true;
-                                    Expression = "Error 03";
-                                    return false;
+                                    if (i != Expression.Length - 1 && "0123456789".Contains(Expression[i + 1]))
+                                    {
+                                        ShowMessage = true;
+                                        Expression = "Error 03";
+                                        return false;
+                                    }
                                 }
                                 continue;
                             }
@@ -277,7 +283,8 @@ namespace AnalyzerClass
                         case "-":
                             {
                                 n = tmp.Pop();
-                                tmp.Push(MathOperations.Sub(tmp.Pop(), n));
+                                if (tmp.Count == 0) tmp.Push(MathOperations.IABS(n));
+                                else tmp.Push(MathOperations.Sub(tmp.Pop(), n));
                                 if (MathOperations.lastError.Length > 0)
                                 {
                                     ShowMessage = true;
