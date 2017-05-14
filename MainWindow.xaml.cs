@@ -120,47 +120,51 @@ namespace Calculator
                             textBoxResult.Text = "Неможливо перетворити до числа";
                         }
                         break;
-                    case "+/-":                       
-                        if (!_timer.IsRunning)
+                    case "+/-":   
+                        if(textBoxExpression.Text.Length > 0)
                         {
-                            _timer = Stopwatch.StartNew();
-
-                        }
-                        else
-                        {
-                            _timer.Stop();
-                            if (_timer.Elapsed.Seconds > 3)
+                            if (!_timer.IsRunning)
                             {
-                                _timer.Reset();
                                 _timer = Stopwatch.StartNew();
-                                return;
-                            }
-                        }                        
-                        if (textBoxExpression.Text[textBoxExpression.Text.Length - 1] == 'm')
-                        {
-                            textBoxExpression.Text = textBoxExpression.Text.Remove(textBoxExpression.Text.Length - 1, 1);
-                            textBoxExpression.Text += 'p';
-                        }
-                        else
-                        {
-                            if (textBoxExpression.Text[textBoxExpression.Text.Length - 1] == 'p')
-                            {
-                                textBoxExpression.Text = textBoxExpression.Text.Remove(textBoxExpression.Text.Length - 1, 1);
-                                textBoxExpression.Text += 'm';
+
                             }
                             else
                             {
-                                if (textBoxExpression.Text == "0")
+                                _timer.Stop();
+                                if (_timer.Elapsed.Seconds > 3)
                                 {
-                                    textBoxExpression.Text = "m";
+                                    _timer.Reset();
+                                    _timer = Stopwatch.StartNew();
+                                    return;
+                                }
+                            }
+                            if (textBoxExpression.Text[textBoxExpression.Text.Length - 1] == 'm')
+                            {
+                                textBoxExpression.Text = textBoxExpression.Text.Remove(textBoxExpression.Text.Length - 1, 1);
+                                textBoxExpression.Text += 'p';
+                            }
+                            else
+                            {
+                                if (textBoxExpression.Text[textBoxExpression.Text.Length - 1] == 'p')
+                                {
+                                    textBoxExpression.Text = textBoxExpression.Text.Remove(textBoxExpression.Text.Length - 1, 1);
+                                    textBoxExpression.Text += 'm';
                                 }
                                 else
                                 {
-                                    textBoxExpression.Text += "m";
+                                    if (textBoxExpression.Text == "0")
+                                    {
+                                        textBoxExpression.Text = "m";
+                                    }
+                                    else
+                                    {
+                                        textBoxExpression.Text += "m";
+                                    }
                                 }
                             }
-                        }
-                        _checkExp = textBoxExpression.Text;
+                            _checkExp = textBoxExpression.Text;
+                        }                    
+                        
                         break;
                     case "=":
                         Analyzer.Expression = textBoxExpression.Text;
